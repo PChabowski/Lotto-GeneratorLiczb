@@ -1,0 +1,2 @@
+# Lotto - Generator Liczb
+ 

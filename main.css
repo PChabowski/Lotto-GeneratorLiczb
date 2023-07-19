@@ -1,0 +1,36 @@
+#content,
+.cont,
+.lp,
+.num {
+  display: flex;
+}
+#content {
+  justify-content: space-evenly;
+}
+.cont {
+  border-radius: 24px;
+  border: 1px solid;
+  font-size: 26px;
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+  flex-direction: column;
+}
+.lp {
+  border-radius: 24px;
+  width: 100%;
+  justify-content: center;
+  border: 1px dotted;
+  background-color: #bab8a0;
+}
+.num {
+  border-radius: 100px;
+  background-color: #edd852;
+  font-size: 68px;
+  width: 55%;
+  height: 148px;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+}
