@@ -1,18 +1,19 @@
-function geneTab() {
-  const numbers = [];
-  while(numbers.length < 6) {
-	var num = random();
-	if (checkTab(num, numbers)) {
-		numbers.push(num);
-	  }
-  }
-  numbers.sort(function(a, b) {return a-b});
-  return numbers;
+function makeTabNumb() {
+	const numbers = [];
+	let i = 0;
+	while (numbers.length < 6) {
+		let num = random();
+		if (checkTab(num, numbers)) {
+				numbers[i] = num;
+				i++;
+			}
+		}
+	return numbers;
 }
 
 function checkTab(num, tab) {
-	for (var i = 0; i < tab.length; i++) {	
-		if (num == tab[i]){
+	for (let i = 0; i < tab.length; i++) {	
+		if (tab[i] == num){
 			return false;
 		}
 	}
@@ -20,18 +21,26 @@ function checkTab(num, tab) {
 }
 
 function random() {
-  var numRand = Math.floor(Math.random() * 49) + 1;
+  let numRand = Math.floor(Math.random() * 49) + 1;
   return numRand;
 }
 
-function displayNumber(tab) {
-  var view = document.getElementsByClassName("num");
-  for (var i = 0; i < view.length; i++) {
-    view[i].innerHTML = tab[i];
-  }
+function displayNumbers(tab) {
+	let view = document.getElementsByClassName("num");
+	for (let i = 0; i < view.length; i++) {
+		view[i].innerHTML = tab[i];
+	}
 }
 
-window.onload = function() {
-  var tab = geneTab();
-  displayNumber(tab);
+function sortNumbers(tab) {
+	tab.sort(function(a, b) {return a-b});
+	return tab;
 }
+
+function start() {
+	const tab = makeTabNumb();
+	sortNumbers(tab);
+	displayNumbers(tab);
+}
+
+window.onload = start;
