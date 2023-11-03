@@ -1,6 +1,18 @@
+import { createElement, clearCounter } from "./createElement.js";
+
+const content = document.querySelector('.generation-number');
+const number = document.querySelectorAll('.num-box');
+
 export function displayNumbers(tab) {
-	let view = document.getElementsByClassName("num");
-	for (let i = 0; i < view.length; i++) {
-		view[i].innerHTML = tab[i];
+	resetDisplay();
+	for (let i = 0; i < 6; i++) {
+		createElement(tab[i]);
+	}
+}
+
+function resetDisplay() {
+	if (number.length < 6) {
+		content.innerHTML = '';
+		clearCounter();
 	}
 }
