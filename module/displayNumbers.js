@@ -1,7 +1,4 @@
-import { createElement, clearCounter } from "./createElement.js";
-
-const content = document.querySelector('.generation-number');
-const number = document.querySelectorAll('.num-box');
+import { createElement, counterElement } from "./createElement.js";
 
 export function displayNumbers(tab) {
 	resetDisplay();
@@ -11,8 +8,10 @@ export function displayNumbers(tab) {
 }
 
 function resetDisplay() {
-	if (number.length < 6) {
+	const numbers = document.querySelectorAll('.num-box');
+	const content = document.querySelector('.generation-number');
+	if (numbers.length > 5) {
 		content.innerHTML = '';
-		clearCounter();
+		counterElement.reset();
 	}
 }
