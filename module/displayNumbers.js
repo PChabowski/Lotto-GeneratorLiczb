@@ -1,6 +1,17 @@
+import { createElement, counterElement } from "./createElement.js";
+
 export function displayNumbers(tab) {
-	let view = document.getElementsByClassName("num");
-	for (let i = 0; i < view.length; i++) {
-		view[i].innerHTML = tab[i];
+	resetDisplay();
+	for (let i = 0; i < 6; i++) {
+		createElement(tab[i]);
+	}
+}
+
+function resetDisplay() {
+	const numbers = document.querySelectorAll('.num-box');
+	const content = document.querySelector('.generation-number');
+	if (numbers.length > 5) {
+		content.innerHTML = '';
+		counterElement.reset();
 	}
 }
